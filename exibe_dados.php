@@ -1,14 +1,16 @@
 
 <?php
-
-    if (
+   
+    $url = "http://" . $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] . "/" ."index.php?pagina=contato.php";
+   
+        if (
             !isset($_GET["nome"]) || !isset($_GET["email"]) || !isset($_GET["assunto"]) 
             || !isset($_GET["mensagem"])
         )
     {
 
          echo "<p class='text-error'>Erro ao tentar enviar dados.</p>" . "<br>" .
-              "<a href='http://localhost:8000/index.php?pagina=contato.php'>clique aqui</a>";
+              "<a href='". $url . "'>clique aqui</a>";
     }
 
     else if (
@@ -18,13 +20,13 @@
     {
 
          echo "<p class='text-error'>Preencha todos os campos.</p>" .  
-              "<a href='http://localhost:8000/index.php?pagina=contato.php'>clique aqui</a>";
+              "<a href='". $url . "'>clique aqui</a>";
     }
 
     else if (!filter_var($_GET["email"], FILTER_VALIDATE_EMAIL))
     {
         echo "<p class='text-error'>E-Mail não é valido</p>" . 
-             "<a href='http://localhost:8000/index.php?pagina=contato.php'>clique aqui</a>";
+             "<a href='". $url . "'>clique aqui</a>";
     }
     else
     {
@@ -40,7 +42,7 @@
              "<b>E-Mail:</b> " . $email . "<br>" .
              "<b>Assunto:</b> " . $assunto . "<br>" .
              "<b>Mensagem:</b> " . $mensagem . "<br><br>" .
-             "<a href='http://localhost:8000/index.php?pagina=contato.php'>clique aqui</a>";
+             "<a href='". $url . "'>clique aqui</a>";
 
     }
 
