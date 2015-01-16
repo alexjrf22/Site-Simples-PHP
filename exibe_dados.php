@@ -1,7 +1,7 @@
 
 <?php
    
-    $url = "http://" . $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT'] . "/" ."index.php?pagina=contato.php";
+    $url = "/index.php?pagina=contato.php";
    
         if (
             !isset($_GET["nome"]) || !isset($_GET["email"]) || !isset($_GET["assunto"]) 
