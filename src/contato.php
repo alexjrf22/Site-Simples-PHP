@@ -1,4 +1,4 @@
-<form id="form" method="get" action="exibe_dados.php">
+<form id="form" method="get" action="exibe_dados">
 
     <h3>Entre Em Contato Com Nossa Equipe.</h3>
     

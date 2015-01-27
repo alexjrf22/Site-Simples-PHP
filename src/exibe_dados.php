@@ -1,7 +1,7 @@
 
 <?php
    
-    $url = "/index.php?pagina=contato.php";
+    $url = "contato";
    
         if (
             !isset($_GET["nome"]) || !isset($_GET["email"]) || !isset($_GET["assunto"]) 
