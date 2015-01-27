@@ -1,7 +1,5 @@
 <?php 
 
-define(DIR, 'src/');
-
 require_once 'config/rotas.php';
 
 $permitidos = [
@@ -17,13 +15,15 @@ $permitidos = [
 
 $rota = url();
 
-require_once DIR . 'menu.php';
+require_once 'src/menu.php';
 
 require_once 'config/config.php';
 
-addRota($rota, $permitidos);
-
-require_once DIR . 'rodape.php';
+if (isset($rota) && isset($permitidos))
+{
+    addRota($rota, $permitidos);
+}
+require_once 'src/rodape.php';
     
 
 
