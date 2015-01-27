@@ -13,11 +13,11 @@
 
 	<ul class="nav nav-tabs">
                 
-                <li <?php echo (isset($url[0]) && $url[0] == "home" || isset($url[0]) && $url[0] == "") ? "class='active'" : ""; ?>><a href="home">Home</a></li>
-  		<li <?php echo (isset($url[0]) && $url[0] == "empresa") ? "class='active'" : ""; ?>><a href="empresa">Empresa</a></li>
-                <li <?php echo (isset($url[0]) && $url[0] == "eprodutos") ? "class='active'" : ""; ?>><a href="produtos">produtos</a></li>
-  		<li <?php echo (isset($url[0]) && $url[0] == "servicos") ? "class='active'" : ""; ?>><a href="servicos">Serviços</a></li>
-  		<li <?php echo (isset($url[0]) && $url[0] == "contato") ? "class='active'" : ""; ?>><a href="contato">Contato</a></li>
+            <li <?php echo ((isset($rota) && $rota == "home") || isset($rota) && empty($rota)) ? "class='active'" : ""; ?>><a href="home">Home</a></li>
+  		<li <?php echo (isset($rota) && $rota == "empresa") ? "class='active'" : ""; ?>><a href="empresa">Empresa</a></li>
+                <li <?php echo (isset($rota) && $rota == "produtos") ? "class='active'" : ""; ?>><a href="produtos">produtos</a></li>
+  		<li <?php echo (isset($rota) && $rota == "servicos") ? "class='active'" : ""; ?>><a href="servicos">Serviços</a></li>
+  		<li <?php echo (isset($rota) && $rota == "contato") ? "class='active'" : ""; ?>><a href="contato">Contato</a></li>
 
 	</ul>
 
