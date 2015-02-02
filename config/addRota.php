@@ -4,7 +4,7 @@ function addRota($rota, $permitidos, $permitidas_conteudo)
 { 
     if (empty($rota))
     {
-       return require_once 'src/home.php';
+       return require_once ('src/conteudo.php');
     }
 
     else if (in_array($rota, $permitidos))

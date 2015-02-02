@@ -4,21 +4,32 @@ require_once 'config/conexaoDB.php';
 require_once 'config/rotas.php';
 
 $rota = url();
+
+if (isset($rota) && empty($rota))
+{
+    $rota = "home";
+}
+
 $conexao = conexaoDB();
 
 if (isset($rota) && isset($conexao))
 {
 
-$query = "select * from paginas where pagina = :pagina";
+    try
+    {
+            $query = "select * from paginas where pagina = :pagina";
+            $sql = $conexao->prepare($query);
+            $sql->bindValue("pagina", $rota);
+            $sql->execute();
+            $pagina = $sql->fetch(PDO::FETCH_ASSOC);
+            $conteudo = $pagina['conteudo'];
 
-$sql = $conexao->prepare($query);
-$sql->bindValue("pagina", $rota);
-$sql->execute();
-
-$pagina = $sql->fetch(PDO::FETCH_ASSOC);
-
-$conteudo = $pagina['conteudo'];
-
+    } 
+    catch (\PDOException $e)
+    {
+        die ("Erro código: " . $e->getCode() . ": " . $e->getMessage() . "\n" . $e->getTraceAsString);
+    }
+    
 }
 else
 {
