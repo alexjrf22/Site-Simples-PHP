@@ -1,31 +1,27 @@
 <?php 
 
+require_once './config/conexaoDB.php';
+
+$conexao = conexaoDB();
+
 ini_set("display_errors", true);
 error_reporting(E_ALL);
 
 require_once 'config/rotas.php';
 
-$permitidos = [
-       
-                    "home"          => "home",
-                    "contato"       => "contato",
-                    "empresa"       => "empresa",
-                    "produtos"      => "produtos",
-                    "servicos"      => "servicos",
-                    "exibe_dados"   => "exibe_dados"
-                    
-              ];
-
 $rota = url();
 
 require_once 'src/menu.php';
 
-require_once 'config/config.php';
+require_once 'config/rotasPermitidas.php';
 
-if (isset($rota) && isset($permitidos))
+require_once 'config/addRota.php';
+
+if (isset($rota) && isset($permitidos) && isset($permitidas_conteudo))
 {
-    addRota($rota, $permitidos);
+    addRota($rota, $permitidos, $permitidas_conteudo);
 }
+
 require_once 'src/rodape.php';
     
 

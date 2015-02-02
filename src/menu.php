@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Site Simples | <?php echo $rota; ?></title>
+        <title>Site Simples | <?php echo (!empty($rota)) ? $rota : "home"; ?></title>
         <link rel="stylesheet" href="../app/css/bootstrap.min.css">
         <link rel="stylesheet" href="../app/css/estilo.css">
     </head>
