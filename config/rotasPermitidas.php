@@ -8,4 +8,4 @@ $permitidas_conteudo = array
     "servicos"    => "servicos"
 );
 
-$permitidos = array ("exibe_dados" => "exibe_dados", "contato" => "contato");
+$permitidos = array ("exibe_dados" => "exibe_dados", "contato" => "contato", "buscador" => "buscador");

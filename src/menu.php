@@ -19,9 +19,9 @@
   		<li <?php echo (isset($rota) && $rota == "servicos") ? "class='active'" : ""; ?>><a href="servicos">Serviços</a></li>
   		<li <?php echo (isset($rota) && $rota == "contato") ? "class='active'" : ""; ?>><a href="contato">Contato</a></li>
                 
-                <form class="form-search pull-right" id="form-busca">
+                <form class="form-search pull-right" id="form-busca" action="buscador">
                     <div class="input-append" id="div-busca">
-                        <input type="text" class="span2 search-query">
+                        <input type="text" class="span2 search-query" name="busca">
                         <button type="submit" class="btn">Busca</button>
                     </div>
        
