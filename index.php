@@ -15,6 +15,13 @@ require_once 'src/menu.php';
 
 require_once 'config/rotasPermitidas.php';
 
+if (isset($conexao)){
+    $query = "select * from paginas";
+    $sql = $conexao->prepare($query);
+    $sql->execute();
+    $pagina = $sql->fetch(PDO::FETCH_ASSOC);
+    
+}
 require_once 'config/addRota.php';
 
 if (isset($rota) && isset($permitidos) && isset($permitidas_conteudo))

@@ -23,6 +23,7 @@ if (isset($rota) && isset($conexao))
             $sql->execute();
             $pagina = $sql->fetch(PDO::FETCH_ASSOC);
             $conteudo = $pagina['conteudo'];
+            $titulo   = $pagina['pagina'];
 
     } 
     catch (\PDOException $e)
@@ -39,7 +40,11 @@ else
 
 ?>
 
-<h1><?php echo $conteudo ?></h1>
+<h1><?php echo $titulo ?></h1>
+
+<section id="conteudo_principal">
+    <p id="conteudo"><?php echo $conteudo ?></p>
+</section>
 
 
 
