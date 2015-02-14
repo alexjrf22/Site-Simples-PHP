@@ -55,6 +55,6 @@ else
     echo 'Erro ao tentar efetuar busca. Tente novamente.';
 }
 
-?>
 
-<?php  ?>
+
+
